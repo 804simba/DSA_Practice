@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class PrintTriangle {
     public static void main(String[] args) {
-        printArrayOfTriangle(4);
+
     }
     public static void printTriangle(int n) {
         for (int i = 0; i < n; i++) {
@@ -62,6 +62,51 @@ public class PrintTriangle {
                 else
                     System.out.print(" ");
             }
+            System.out.println();
+        }
+    }
+
+    public static void printRightTriangleRecursive(int row, int col) {
+        /*
+        PRINTS:
+            ****
+            ***
+            **
+            *
+        */
+
+        /* Remember that any recursive call always returns to the function that called it.
+           if a function isn't done executing, it waits in the stack and subsequent statements after that function
+           are not executed until it pops out of the stack.
+
+         */
+        if (row == 0)
+            return;
+        if (col < row) {
+            System.out.print("*");
+            printRightTriangleRecursive(row, col+1);
+        } else {
+            System.out.println();
+            printRightTriangleRecursive(row-1, 0);
+        }
+    }
+
+    public static void printRightTriangleRecursive2(int row, int col) {
+        /*
+        PRINTS:
+         *
+         **
+         ***
+         ****
+         */
+
+        if (row == 0)
+            return;
+        if (col < row) {
+            printRightTriangleRecursive2(row, col+1);
+            System.out.print("*");
+        } else {
+            printRightTriangleRecursive2(row-1, 0);
             System.out.println();
         }
     }

@@ -3,8 +3,10 @@ package com.timtez.algos;
 public class ReverseString {
 
     public static void main(String[] args) {
-        char[] s = {'h', 'e', 'l', 'l', 'o' };
-        reverseString(s);
+//        char[] s = {'h', 'e', 'l', 'l', 'o' };
+//        reverseString(s);
+        int res = countZeros(100203, 0);
+        System.out.println(res);
     }
 
     public static void reverseString(char[] s) {
@@ -24,6 +26,26 @@ public class ReverseString {
         s[end] = temp;
 
         reverse(s, start + 1, end - 1);
+    }
+
+    static int sum = 0;
+    static void reverseNumber(int n) {
+        if (n == 0)
+            return;
+        int lastDigit = n % 10;
+        sum += lastDigit * 10 + n;
+
+        reverseNumber(n / 10);
+    }
+
+    static int countZeros(int n, int count) {
+        if (n == 0)
+            return count;
+        int lastNumber = n % 10;
+        if (lastNumber == 0)
+            return countZeros(n/10, count+1);
+        else
+            return countZeros(n/10, count);
     }
 }
 

@@ -10,7 +10,7 @@ public class Test {
 //        int target = -100;
 //        threeSumClosest(array, target);
 
-        printTree(3);
+//        printTree(3);
     }
 
     public static int threeSumClosest(int[] nums, int target) {

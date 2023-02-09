@@ -11,7 +11,7 @@ public class LongestSubArrayWithSumZero {
 
         for (int i = 0; i < arr.length; i++) {
             // add the current array int to sum;
-            // if map contains the sum, get the key and minus the current index from it.
+            // if map contains the sum, get the key and minus the current index from it to get the length of the zero sum substring.
             // compare the maxLength value from the difference and update it.
             // else put the sum and the index in the map
             sum += arr[i];

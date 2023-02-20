@@ -4,7 +4,19 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
+        // customer Integer wrapper class
+        IntegerContainer myIntegerWrapper1 = new IntegerContainer(12);
+        IntegerContainer myIntegerWrapper2 = new IntegerContainer(10);
+        swap(myIntegerWrapper1, myIntegerWrapper2);
+        System.out.println(myIntegerWrapper1.getMyInteger());
+        System.out.println(myIntegerWrapper2.getMyInteger());
+    }
 
+    public static void swap(IntegerContainer k, IntegerContainer l) {
+        IntegerContainer temp = k;
+        k = l;
+        l = temp;
+        System.out.printf("k: %s l: %s\n", k, l);
     }
 
     public static int threeSumClosest(int[] nums, int target) {

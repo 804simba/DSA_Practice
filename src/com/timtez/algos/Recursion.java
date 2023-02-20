@@ -97,4 +97,17 @@ public class Recursion {
             return 1;
         return n + sumOfNaturaLNums(n - 1);
     }
+
+    public static int digitalRootOfNumber(int n) {
+        // sum the number until it returns a single digit.
+        if (n < 10) {
+            return n;
+        }
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return digitalRootOfNumber(sum);
+    }
 }

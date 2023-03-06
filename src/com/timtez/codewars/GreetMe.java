@@ -17,7 +17,7 @@ public class GreetMe {
         return "Hello " + result.concat(result2.toLowerCase());
     }
     public static String greet(String name) {
-        return "Hello " + name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase() + "!";
+        return String.format("Hello %s%s!", name.substring(0, 1).toUpperCase(), name.substring(1).toLowerCase());
     }
     public static void main(String[] args) {
         String name = "TIMOTHY";

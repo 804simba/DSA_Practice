@@ -1,36 +1,62 @@
 package com.timtez.leetcode;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 // https://leetcode.com/problems/valid-parentheses/
-public class IsValidParentheses {
+
+/**
+ * We can use a stack to store characters of the string.
+ * Then we can do two things:
+ * 1. if char is open bracket (i.e. '(' or '{' or '[') then push it in stack.
+ * 2. if char is closed bracket therefore we can check the following conditions:
+ *
+ *    1: if '{' is before '}'.
+ *    2: if '(' is before ')'.
+ *    3: if '[' is before ']'.
+ *
+ *    If any condition is false then return false.
+ * */
+class IsValidParentheses {
     public static void main(String[] args) {
-        String str = "(]";
+        String str = "()[]{}";
         System.out.println(isValidParentheses(str));
     }
-    public static boolean isValidParentheses(String s) {
-        Map<Character, Character> bracketMap = new HashMap<>();
-        bracketMap.put(')', '(');
-        bracketMap.put('}', '{');
-        bracketMap.put(']', '[');
+    public static boolean isValidParenthesesPro(String s) {
+        Stack<Character> stack = new Stack<>();
 
-        Set<Character> expectedBrackets = new HashSet<>();
-
-        for (char c : s.toCharArray()) {
-            if(bracketMap.containsValue(c)) {
-                // adds the opening bracket to the Set, waiting for a corresponding closing bracket.
-                expectedBrackets.add(bracketMap.get(c));
-            } else if(bracketMap.containsKey(c)) {
-                // expectedBrackets.iterator().next() is retrieving the first element in the set of expected closing brackets.
-                if (expectedBrackets.isEmpty() || c != expectedBrackets.iterator().next()) {
-                    return false;
-                }
-                expectedBrackets.remove(c);
+        for (char ch : s.toCharArray()) {
+            if (ch == '(') {
+                stack.push(')');
+            } else if (ch == '{') {
+                stack.push('}');
+            } else if (ch == '[') {
+                stack.push(']');
+            } else if (stack.isEmpty() || stack.pop() != ch) {
+                return false;
             }
         }
-        return expectedBrackets.isEmpty();
+        return stack.isEmpty();
+    }
+    public static boolean isValidParentheses(String s) {
+        Stack<Character> bracketsStack = new Stack<>();
+        for (char ch : s.toCharArray()) {
+            switch(ch) {
+                case '(':
+                case '[':
+                case '{':
+                    bracketsStack.push(ch);
+                    break;
+                case ')':
+                    if (bracketsStack.isEmpty() || bracketsStack.pop() != '(') { return false; }
+                    break;
+                case ']':
+                    if (bracketsStack.isEmpty() || bracketsStack.pop() != '[') { return false; }
+                    break;
+                case '}':
+                    if (bracketsStack.isEmpty() || bracketsStack.pop() != '{') { return false; }
+                    break;
+            }
+        }
+        return bracketsStack.isEmpty();
     }
 }

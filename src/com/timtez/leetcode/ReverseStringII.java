@@ -1,8 +1,8 @@
 package com.timtez.leetcode;
 
-import java.util.Locale;
 
 public class ReverseStringII {
+    // https://leetcode.com/problems/reverse-string-ii/description/
     public static void main(String[] args) {
         String string = "abcdefg";
         //badc
@@ -41,8 +41,7 @@ public class ReverseStringII {
                 reverseK(i, length-1, strCharArray);
             }
         }
-        String answer = new String(strCharArray);
-        return answer;
+        return new String(strCharArray);
     }
     public static void reverseK(int i, int j, char[] strCharArray) {
         while (i < j) {

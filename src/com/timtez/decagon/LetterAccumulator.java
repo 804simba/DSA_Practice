@@ -24,7 +24,7 @@ public class LetterAccumulator {
                 sb.append("-");
             }
         }
-        return sb.toString().substring(0, sb.length() - 2);
+        return sb.substring(0, sb.length() - 2);
     }
 
     public static String accumulator2(String str) {

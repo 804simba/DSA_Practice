@@ -1,4 +1,4 @@
-package com.timtez.dcg;
+package com.timtez.decagon;
 
 import java.util.HashMap;
 import java.util.Map;

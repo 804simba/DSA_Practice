@@ -1,6 +1,4 @@
-package com.timtez.dcg;
-
-import javax.naming.InsufficientResourcesException;
+package com.timtez.decagon;
 
 public class NumberToOrdinal {
     // https://stackoverflow.com/questions/6810336/is-there-a-way-in-java-to-convert-an-integer-to-its-ordinal-name

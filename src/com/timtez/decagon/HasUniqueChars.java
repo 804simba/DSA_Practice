@@ -1,4 +1,4 @@
-package com.timtez.dcg;
+package com.timtez.decagon;
 
 public class HasUniqueChars {
     public static void main(String[] args) {

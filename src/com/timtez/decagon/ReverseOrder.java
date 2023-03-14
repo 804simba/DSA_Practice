@@ -1,4 +1,4 @@
-package com.timtez.dcg;
+package com.timtez.decagon;
 import java.util.Arrays;
 public class ReverseOrder {
     public static void main(String[] args) {

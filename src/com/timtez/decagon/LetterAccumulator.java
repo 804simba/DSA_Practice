@@ -14,13 +14,14 @@ public class LetterAccumulator {
         StringBuilder sb = new StringBuilder();
         int pointer = 0;
         for (int i = 1; i <= str.length(); i++) {
+            String lowerCase = String.valueOf(characterArray[i - 1]).toLowerCase();
             if (i == str.length()) {
                 sb.append(uppercaseChar[pointer++]);
-                sb.append(String.valueOf(characterArray[i - 1]).toLowerCase().repeat(i));
+                sb.append(lowerCase.repeat(i));
                 sb.append("-");
             } else {
                 sb.append(uppercaseChar[pointer++]);
-                sb.append(String.valueOf(characterArray[i - 1]).toLowerCase().repeat(i - 1));
+                sb.append(lowerCase.repeat(i - 1));
                 sb.append("-");
             }
         }

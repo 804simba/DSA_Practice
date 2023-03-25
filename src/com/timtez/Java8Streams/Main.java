@@ -87,5 +87,16 @@ public class Main {
         Map<Integer, String> map = products.stream()
                 .collect(Collectors.toMap(Product::getId, Product::getName));
         System.out.println("Product map: " + map);
+
+        System.out.println("Count example: " + Arrays.asList(-1, 30, 50, 49, 12, 0)
+                .stream()
+                .filter(n -> n % 2 == 0)
+                        .reduce(Integer::sum)
+                        .get());
+
+        System.out.println("FlatMap example: " + List.of(Arrays.asList("Timothy", "Dauda", "Kehinde", "Taiwo"))
+                .stream().flatMap(array -> array.stream())
+                                .collect(Collectors.joining(", ")));
+
     }
 }

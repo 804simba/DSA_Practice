@@ -1,6 +1,6 @@
 package com.simba.leetcode;
 
-public class ceilAndFloorOfANumber {
+public class CeilAndFloorOfANumber {
     public static void main(String[] args) {
         int[] array = {2, 3, 5, 9, 14, 16, 18};
         int target = 7;

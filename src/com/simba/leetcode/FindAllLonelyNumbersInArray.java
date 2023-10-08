@@ -10,18 +10,20 @@ public class FindAllLonelyNumbersInArray {
     * */
 
     public static void main(String[] args) {
-        findLonely(new int[]{10, 6, 5, 8});
+
+        var numbers = findLonely(new int[]{10, 6, 5, 8});
+        System.out.println("numbers = " + numbers);
     }
 
     public static List<Integer> findLonely(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
         LinkedList<Integer> list = new LinkedList<>();
         /*
-        * 1. Create a new HashMap, and a new Linkedlist because the questions expects you to returh a List
+        * 1. Create a new HashMap, and a new Linkedlist because the question expects you to return a List
         * 2. Populate the hashmap with each value of the given array.
-        * 3. HashMaps do not allow duplicate keys, so it will handle any duplicate values in the array.
+        * 3. HashMaps does not allow duplicate keys, so it will handle any duplicate values in the array.
         * 4. Set the default key values of each key to 1, by using the getOrDefault() method.
-        * 5. loop through the array and check if there are no keys of x-1 and x+1 for each keys in the hashmap.
+        * 5. loop through the array and check if there are no keys of x-1 and x+1 for each key in the hashmap.
         *    then add that integer to the list. return the list after the iteration.
         * */
 

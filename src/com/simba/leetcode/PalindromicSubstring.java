@@ -16,11 +16,11 @@ public class PalindromicSubstring {
         return count;
     }
 
-    private static int countPalindromes(String str, int s, int e){
+    private static int countPalindromes(String str, int start, int end){
         int count = 0;
-        while(s>=0 && e<str.length() && str.charAt(s) == str.charAt(e)){
-            s--;
-            e++;
+        while(start>=0 && end<str.length() && str.charAt(start) == str.charAt(end)){
+            start--;
+            end++;
             count++;
         }
         return count;

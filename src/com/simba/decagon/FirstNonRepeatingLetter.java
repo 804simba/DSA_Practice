@@ -5,7 +5,9 @@ import java.util.Map;
 
 public class FirstNonRepeatingLetter {
     public static void main(String[] args) {
+
         firstNonRepeatingLetterPRO("stress");
+        firstNonRepeatingLetter("stress");
     }
 
     public static void firstNonRepeatingLetterPRO(String s) {
